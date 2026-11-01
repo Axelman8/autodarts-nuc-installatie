@@ -5,7 +5,9 @@ set -Eeuo pipefail
 fail() { printf 'FOUT: %s\n' "$*" >&2; exit 1; }
 say() { printf '\n==> %s\n' "$*"; }
 
-[[ ${EUID} -eq 0 ]] || fail 'Start dit bestand met: sudo bash herstel-autodarts-kiosk.sh'
+if [[ ${EUID} -ne 0 ]]; then
+  exec sudo /usr/bin/bash "$0" "$@"
+fi
 [[ -n ${SUDO_USER:-} && ${SUDO_USER} != root ]] || fail 'Start vanuit de normale Autodarts-gebruiker met sudo.'
 [[ $(dpkg --print-architecture) == amd64 ]] || fail 'Dit herstel is alleen bedoeld voor Ubuntu op een x86-64 NUC.'
 [[ -f /etc/os-release ]] || fail 'Ubuntu is niet herkend.'
