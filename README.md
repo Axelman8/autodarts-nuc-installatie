@@ -4,7 +4,7 @@ Voor een x86-64 NUC met Ubuntu waarop Chromium na een update `play.autodarts.com
 
 ## Installeren op de NUC
 
-1. [Download het herstelbestand](https://github.com/Axelman8/autodarts-nuc-herstel/releases/latest/download/herstel-autodarts-kiosk.sh) op de NUC. Sla het op in **Downloads**.
+1. [Download het herstelbestand](https://github.com/Axelman8/autodarts-nuc-installatie/releases/latest/download/herstel-autodarts-kiosk.sh) op de NUC. Sla het op in **Downloads**.
 2. Open **Terminal** en voer uit:
 
    ```bash
